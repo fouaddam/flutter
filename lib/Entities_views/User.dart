@@ -29,6 +29,7 @@ class User extends StatelessWidget {
                   OutlinedButton(
                     onPressed: () {
                       // Respond to button press
+                      Navigator.of(context).pushNamed('/test');
                     },
 
                     child: Text("Login "),

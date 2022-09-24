@@ -1,5 +1,6 @@
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -28,6 +29,10 @@ class Register extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+    final docs=FirebaseFirestore.instance.doc('/test/iNGYSgdSOrsaK9Hwrj0e');
+
+
+
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
@@ -49,7 +54,6 @@ class Register extends StatelessWidget{
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    // Respond to button press
                     insert();
                   },
 
@@ -59,10 +63,10 @@ class Register extends StatelessWidget{
 
                 ),
 
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
+                OutlinedButton(onPressed: () {
+
+
+                },
                   child: Text("Cancelar "),
                 )
 
