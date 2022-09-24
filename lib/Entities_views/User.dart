@@ -11,7 +11,7 @@ class User extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
         appBar: AppBar(
-          title: Text("Applicacion"),
+          title: Text("Login"),
           toolbarHeight: 25,
         ),
         body: Center(
@@ -22,8 +22,7 @@ class User extends StatelessWidget {
               SizedBox(height: 10),
               RF_inputText( SLabelName: 'inserta La contraseña'),
               SizedBox(height: 10),
-              RF_inputText( SLabelName: 'repite la contraseña'),
-              SizedBox(height: 20),
+
               Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -37,7 +36,7 @@ class User extends StatelessWidget {
 
                   OutlinedButton(
                     onPressed: () {
-                      // Respond to button press
+                      Navigator.of(context).pushNamed('/Register');
                     },
                     child: Text("Registro"),
                   )
