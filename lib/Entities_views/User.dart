@@ -3,14 +3,13 @@ import 'package:flutter/material.dart';
 
 import '../Custom_views/RF_InputText.dart';
 
-class App extends StatelessWidget {
-  const App({Key? key}):super(key:key);
+class User extends StatelessWidget {
+  const User({Key? key}):super(key:key);
 
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text("Applicacion"),
           toolbarHeight: 25,
@@ -49,10 +48,8 @@ class App extends StatelessWidget {
             ],
           ),
         ),
-      ),
 
-    )
-    ;
+    );
   }
 
 }
