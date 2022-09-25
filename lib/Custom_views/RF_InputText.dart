@@ -6,6 +6,12 @@ class RF_inputText extends StatelessWidget{
   final String sValorInicial;
   final int iLenght;
   final String SLabelName;
+
+  final TextEditingController myController = TextEditingController();
+
+  String getText(){
+    return myController.text;
+  }
   RF_inputText({Key? key, this.sValorInicial="",this.iLenght=20, required this.SLabelName}):super(key:key);
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class RF_inputText extends StatelessWidget{
       padding: const EdgeInsets.all(20.0),
       child: TextFormField(
         cursorColor: Colors.white70,
-        initialValue: sValorInicial,
+        controller: myController,
         maxLength: iLenght,
         decoration: InputDecoration(
           labelText: SLabelName,

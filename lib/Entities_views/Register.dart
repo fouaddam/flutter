@@ -29,7 +29,7 @@ class Register extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final docs=FirebaseFirestore.instance.doc('/test/iNGYSgdSOrsaK9Hwrj0e');
+
 
 
 
