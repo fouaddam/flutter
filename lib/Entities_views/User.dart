@@ -37,7 +37,7 @@ class User extends StatelessWidget {
                     onPressed: () {
                       // Respond to button press
                       Navigator.of(context).pushNamed('/test');
-                      print(input2.myController.text);
+                      print(input2.getText());
                     },
 
                     child: Text("Login "),

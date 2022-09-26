@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class RF_inputText extends StatelessWidget{
+
   final String sValorInicial;
   final int iLenght;
   final String SLabelName;
-
   final TextEditingController myController = TextEditingController();
 
   String getText(){

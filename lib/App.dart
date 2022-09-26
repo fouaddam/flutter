@@ -4,6 +4,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:untitled1/Entities_views/LoginPhoneView.dart';
 
 
 import 'Entities_views/Register.dart';
@@ -18,10 +19,11 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
-      routes: {'/Users':(context)=>User(),
-               '/Register':(context)=>Register(),
-                '/test':(context)=>test()},
-      initialRoute:'/Users' ,
+      routes: { '/Users':(context)=>User(),
+                '/Register':(context)=>Register(),
+                '/test':(context)=>test(),
+                '/loginPhoneview':(context)=>LoginPhoneView()},
+      initialRoute:'/loginPhoneview' ,
     );
   }
 

@@ -5,16 +5,22 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../Custom_views/RF_InputText.dart';
+import '../Custom_views/RF_InputText.dart';
+import '../Custom_views/RF_InputText.dart';
 
 class Register extends StatelessWidget{
 
   Register({Key? key}):super(key:key);
+  RF_inputText input1=RF_inputText( SLabelName: 'inserta el usuario');
+  RF_inputText input2=RF_inputText( SLabelName: 'inserta La contraseña');
+  RF_inputText input3=RF_inputText( SLabelName: 'repite la contraseña');
 
-  insert() async {
+  insert(String S1,String S2) async {
+
     try {
       final credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: "email@Address.com",
-        password: "password",
+        email: input1.getText(),
+        password: input2.getText(),
       );
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -43,18 +49,23 @@ class Register extends StatelessWidget{
         child:Column(
           children: [
             SizedBox(height: 60),
-            RF_inputText( SLabelName: 'inserta el usuario'),
+            input1,
             SizedBox(height: 10),
-            RF_inputText( SLabelName: 'inserta La contraseña'),
+            input2,
             SizedBox(height: 10),
-            RF_inputText( SLabelName: 'repite la contraseña'),
-            SizedBox(height: 20),
+            input3,
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 OutlinedButton(
                   onPressed: () {
-                    insert();
+                    print("------>"+input1.getText());
+                    if(input1.getText()==input2.getText()||
+                        input1.getText().isEmpty){
+                      print("contraseña fallida"+input1.getText());
+                      return;
+                    }
+                    insert(input1.getText(),input2.getText());
                   },
 
                   child: Text("Aceptar "),
@@ -64,7 +75,7 @@ class Register extends StatelessWidget{
                 ),
 
                 OutlinedButton(onPressed: () {
-
+                Navigator.of(context).pop();
 
                 },
                   child: Text("Cancelar "),
