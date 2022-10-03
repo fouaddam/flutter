@@ -4,12 +4,12 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:untitled1/Entities_views/LoginPhoneView.dart';
+
 
 
 import 'Entities_views/Register.dart';
 import 'Entities_views/User.dart';
-import 'Entities_views/test.dart';
+
 
 
 class App extends StatelessWidget {
@@ -21,8 +21,8 @@ class App extends StatelessWidget {
     return MaterialApp(
       routes: { '/Users':(context)=>User(),
                 '/Register':(context)=>Register(),
-                '/test':(context)=>test(),
-                '/loginPhoneview':(context)=>LoginPhoneView()},
+
+                },
       initialRoute:'/loginPhoneview' ,
     );
   }
